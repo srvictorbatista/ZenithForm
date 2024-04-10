@@ -1,0 +1,40 @@
+# Arquivos que não desejo enviar(arbitrariamente)
+NOTAS.txt
+Screenshot001.jpg
+Screenshot002.jpg
+
+
+# Arquivos temporários
+.DS_Store
+Thumbs.db
+
+# # Arquivos de configuração IDEs
+# .idea/
+# .vscode/
+ 
+# # Arquivos de dependências gerados
+# /node_modules/
+# /vendor/
+ 
+# # Arquivos de compilação e cache
+# /build/
+# /dist/
+*.log
+npm-debug.log*
+ 
+# # Ambientes específicos
+# .env
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
+ 
+# # Arquivos de cache e dados
+.cache/
+.data/
+ 
+# # Outros arquivos gerados
+*.bak
+*.swp
+*.swo
+LICENSE

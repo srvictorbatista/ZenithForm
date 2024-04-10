@@ -1,0 +1,379 @@
+/* Formulário Zenith - Folha de stilos
+ * Autor: Sr. Victor Batista - t.me/LevyMac, https://github.com/srvictorbatista/ZenithForm
+ **/
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+    overflow-y: auto; 
+}
+body, 
+#validate{
+  background-color: #07000E; 
+}
+
+body, 
+#validate, form *{ 
+  font-family: 'Montserrat', sans-serif;
+  color:#FFF;
+  font-size: 1.2em;
+}
+#validate {
+  background-color: #FFF;
+  padding: 8px 5px 7px; 
+  display: none;
+  font-size: 0.8em;
+  border-radius: 5px;
+}
+#validate, #validate * {
+    color:  #EA0000;
+}
+
+#conteudo, #new-conteudo{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+section {
+  width: 100%;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.9; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+  opacity: 0.9;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+  opacity: 0.9;
+}
+
+
+
+form {
+  padding: 0px 30px;
+  width: 100%;
+  text-align-last: center;
+}
+
+form div{
+    letter-spacing: 6px;
+    font-size: 0.5em;
+    margin-top: 2rem;
+    margin: 15px 30px;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+    text-align: left !important; display:inline-block;
+}
+
+
+input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+  outline: 0;
+  padding: 5px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  width: 150px;
+}
+
+
+input:focus {
+  max-width: 100%;
+  width: 400px;
+}
+
+
+input:focus + .label-text {
+  color: #f0f0f0;
+  font-size: 13px;
+  margin-top: 10px;
+  -moz-transform: translateY(-74px);
+  -ms-transform: translateY(-74px);
+  -webkit-transform: translateY(-74px);
+  transform: translateY(-74px);
+}
+
+
+input:valid + .label-text {
+  font-size: 13px;
+  -moz-transform: translateY(-74px);
+  -ms-transform: translateY(-74px);
+  -webkit-transform: translateY(-74px);
+  transform: translateY(-74px);
+}
+
+input:-internal-autofill-selected {
+  background-color: transparent;
+}
+
+
+button {
+  background: #FFC000; /*transparent;*/
+  color: #f0f0f0;
+  border:none;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 8px 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  /*margin: 15px 30px;*/
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  min-height: 48px;
+  border-radius: 5px;
+}
+
+button:hover,
+button:focus {
+  background-color: #FFE400;
+  color: #FFF;
+  outline: none;
+  border-radius: 8px;
+}
+
+
+
+i, .fa {
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.fa-arrow-up:before {
+  position: absolute;
+  bottom: 22%;
+  right: 10%;
+}
+
+.fa-arrow-down:before {
+  position: absolute;
+  bottom: 22%;
+  right: 7%;
+}
+
+.fa-chevron-up, .fa-chevron-down{
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 5px;
+    background-color: rgb(251, 206, 55);
+    margin-inline-end: 2px;
+    padding:5px;
+    float:right;
+}
+.fa-chevron-down {
+    border-radius: 5px 0px 0px 5px;
+}
+.fa-chevron-up{
+border-radius: 0px 5px 5px 0px;
+}
+.chevron{
+  border-radius: 5px;
+}
+
+
+
+.contentForm{
+    font-size: 1.1em; text-align: left !important; display:inline-block; width:680px; max-width:100%;
+}
+
+@media only screen and (max-width: 680px){ /* dispositivos moveis **/
+  .contentForm{
+    font-size: 0.8em; text-align: left !important; display:inline-block; width:680px; max-width:100%;
+    padding:0px 20px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ******************************************************** **/
+    #conteudo{
+        position: absolute;
+        top: 0;
+        opacity: 1;
+        transition: top 0.9s ease, opacity 1s ease;
+    }
+    #conteudo.saida{
+        top: 60px;
+        transition: top 0.5s ease;
+    }
+    #conteudo.saida.fade{        
+        top: -9000px;
+        opacity: 0;
+        transition: top 3.9s ease, opacity 5.5s ease;
+    }
+
+
+
+    #new-conteudo{
+        position: absolute;
+        top: 900px;
+        opacity: 0;
+        transition: top 0s ease, opacity 1s ease;
+    }
+    #new-conteudo.entrada{
+        top: -30px;
+        opacity: 0.5;
+        transition: top 0.9s ease;
+    }
+    #new-conteudo.entrada.fade{              
+        top: 0px;
+        opacity: 1;
+        transition: top 0.9s ease, opacity 1.5s ease;
+    }
+
+
+/* ******************************************************** **/
+    #porgress-display {
+      width: 100%;
+      height: 3px;
+      background-color: #333; /*transparent*/
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      display: none;
+    }
+
+    #porgress {
+      height: 100%;
+      background-color: #FFF600AF;
+      width: 0;
+      transition: width 0.9s ease;
+    }
+
+/* ******************************************************** **/
+
+/**/
+    .bg{
+      width:100%; height:100%; position:fixed; background-color:transparent; z-index:-100000;
+    }
+
+    .bg2 {
+      background-color: #07000E;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url('../img/bgs/BG01.jpg');
+        background-size: cover;
+        background-position: center;
+        animation: fadeIn 2s forwards;
+        opacity: 0;
+        z-index:-100000;
+    }
+    .bg3 {
+      background-color: transparent;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url('../img/bgs/BG03.gif');
+        background-size: cover;
+        background-position: center;
+        animation: fadeIn2 2s forwards;
+        opacity: 0;
+        z-index:-100000;
+    }
+    .bg4 {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url('../img/bgs/BG04.gif');
+        background-size: cover;
+        background-position: center;
+        animation: fadeIn3 1s forwards;
+        opacity: 1;
+        z-index:-100000;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1.5;
+        }
+    }
+
+    @keyframes fadeIn2 {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 0.11;
+        }
+    }
+
+    @keyframes fadeIn3 {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 0.4;
+        }
+    }
+
+/* ******************************************************** **/
+
+
+    #div-navigate{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 50px;
+        display: inline-block;
+
+    }
+    #div-navigate span{
+        padding:10px 10px 10px 15px;
+        height: 35px;
+    }
+    #div-navigate span.fa{
+        padding-top: 1px;
+        font-size: 30px;
+    }
+    #div-navigate span.powerby{
+         font-weight: normal;
+         border-radius: 5px;
+         background-color: rgb(251, 206, 55);
+         letter-spacing: 0px;
+         float:right;
+         margin-left: 10px;
+    }
+    #div-navigate span.powerby strong{
+    color: #1D193BCC;
+    }
